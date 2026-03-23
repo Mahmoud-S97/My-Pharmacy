@@ -1,35 +1,29 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
 import { Text, View } from 'react-native';
-
-// import { HapticTab } from '@/components/haptic-tab';
-// import { IconSymbol } from '@/components/ui/icon-symbol';
-// import { Colors } from '../../constants/theme';
-// import { useColorScheme } from '@/hooks/use-color-scheme';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export default function TabLayout() {
-  // const colorScheme = useColorScheme();
 
   return (
     <Tabs
-    initialRouteName='home'
+      initialRouteName='home'
       screenOptions={{
         tabBarActiveTintColor: 'purple',
-        headerShown: false,
-        // tabBarButton: HapticTab,
+        headerShown: false
       }}>
       <Tabs.Screen
         name="home"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <View />,
+          tabBarIcon: ({ color, size }) => <FontAwesome name='home' color={color} size={size} />,
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color }) => <View />,
+          tabBarIcon: ({ color, size }) => <FontAwesome name='globe' color={color} size={size} />,
         }}
       />
     </Tabs>

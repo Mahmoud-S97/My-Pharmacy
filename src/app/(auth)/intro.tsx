@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
-import MainButton from '@/src/components/ui/globals/buttons/MainButton';
+import MainButton from '@/components/ui/globals/buttons/MainButton';
 
 const IntroScreen = () => {
 

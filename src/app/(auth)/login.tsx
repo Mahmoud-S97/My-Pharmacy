@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, KeyboardAvoidingView, Keyboard, ScrollView } from 'react-native';
 import { router } from 'expo-router';
-import MainButton from '@/src/components/ui/globals/buttons/MainButton';
-import MainInputField from '@/src/components/ui/globals/inputFields/MainInputField';
+import MainButton from '@/components/ui/globals/buttons/MainButton';
+import MainInputField from '@/components/ui/globals/inputFields/MainInputField';
 
 const LoginScreen = () => {
 
@@ -19,6 +19,7 @@ const LoginScreen = () => {
 
   const loginHandler = (): void => {
     // Login
+    router.replace('/home');
   }
 
   return (

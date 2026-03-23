@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { cn } from '@/src/lib/nativeWindCss/cs';
+import { cn } from '@/lib/nativeWindCss/cs';
 
 type MainButtonProps = {
   children?: ReactNode,
