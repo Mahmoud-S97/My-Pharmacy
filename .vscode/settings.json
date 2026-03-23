@@ -1,7 +1,12 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit",
-    "source.sortMembers": "explicit"
-  }
+    "source.fixAll": "never",
+    "source.organizeImports": "never",
+    "source.sortMembers": "never"
+  },
+  "typescript.preferences.removeUnusedImports": false,
+  "javascript.preferences.removeUnusedImports": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false
 }
