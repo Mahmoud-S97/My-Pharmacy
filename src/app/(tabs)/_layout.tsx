@@ -9,7 +9,7 @@ export default function TabLayout() {
   const { isLoggedIn } = useAuth();
 
   // App-Redirecting second guard
-  if (!isLoggedIn) return <Redirect href='/(auth)/intro' />
+  if (!isLoggedIn) return <Redirect href='/(auth)/login' />
 
   return (
     <Tabs

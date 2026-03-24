@@ -1,4 +1,5 @@
 
 export const LOCAL_STORAGE_KEYS: Record<string, string> = {
-  AUTH_TOKEN: 'auth_token'
+  AUTH_TOKEN: 'auth_token',
+  IS_FIRST_TIME: 'is_first_time'
 }
