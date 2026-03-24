@@ -1,9 +1,11 @@
 import './global.css';
+import 'react-native-reanimated';
+import { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+
+import { AuthProvider } from '@/store/context/AuthContext';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -14,13 +16,15 @@ export default function RootLayout() {
   }, []);
 
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1 }} edges={['top']}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(auth)" />
-          <Stack.Screen name="(tabs)" />
-        </Stack>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <AuthProvider>
+      <SafeAreaProvider>
+        <SafeAreaView style={{ flex: 1 }} edges={['top']}>
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="(auth)" />
+            <Stack.Screen name="(tabs)" />
+          </Stack>
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </AuthProvider>
   );
 }
