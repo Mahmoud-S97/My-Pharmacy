@@ -6,11 +6,11 @@ import MainInputField from '@/components/ui/globals/inputFields/MainInputField';
 
 const LoginScreen = () => {
 
-  const [email, setEmail] = useState<string>('');
+  const [userName, setUserName] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
-  const setEmailHandler = (value: string): void => setEmail(value);
+  const setUserNameHandler = (value: string): void => setUserName(value);
   const setPasswordHandler = (value: string): void => setPassword(value)
 
   const toggleShowPassword = () => {
@@ -29,7 +29,7 @@ const LoginScreen = () => {
           <View className='flex-1 px-6 py-2 bg-white justify-center items-center'>
             <Text className='text-5xl font-bold mb-20 text-center'>Login!</Text>
             <View className='w-full h-auto flex flex-column gap-8 justify-center items-center'>
-              <MainInputField placeholder='example@gmail.com' icon='email' value={email} onChangeText={setEmailHandler} />
+              <MainInputField placeholder='Username' icon='account-circle' value={userName} onChangeText={setUserNameHandler} />
               <MainInputField placeholder='Password' icon='lock' secureTextEntry={!showPassword} isPasswordField={true} value={password} onChangeText={setPasswordHandler} toggleShowPassword={toggleShowPassword} />
               <MainButton title='Login' onPress={loginHandler} />
               <TouchableOpacity activeOpacity={0.7} className='flex-row items-center justify-center' onPress={() => router.navigate('/sign-up')}>
