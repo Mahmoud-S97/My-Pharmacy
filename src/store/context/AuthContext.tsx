@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { LOCAL_STORAGE_KEYS } from '@/constants/localStorageKeys';
-import { UseSecureStorage } from '@/hooks/Auth/useSecureStorage';
+import { useSecureStorage } from '@/hooks/Auth/useSecureStorage';
 
 export type AuthContextType = {
   authToken: string | null,
@@ -14,7 +14,7 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
-  const { saveDataSecurely, getDataSecurely, deleteDataSecurely } = UseSecureStorage();
+  const { saveDataSecurely, getDataSecurely, deleteDataSecurely } = useSecureStorage();
 
   const [authToken, setAuthToken] = useState<string | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
