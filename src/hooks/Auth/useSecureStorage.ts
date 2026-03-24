@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as SecureStore from 'expo-secure-store';
 
+// Secure Storage - Hook
 export const UseSecureStorage = () => {
 
   const saveDataToSecureStorage = async (key: string, value: string) => {

@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { JSX, useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, KeyboardAvoidingView, Keyboard, ScrollView } from 'react-native';
 import { router } from 'expo-router';
 import MainButton from '@/components/ui/globals/buttons/MainButton';
 import MainInputField from '@/components/ui/globals/inputFields/MainInputField';
+import { useAuth } from '@/hooks/Auth/useAuth';
+import { ENV } from '../../../config/env';
+import { API_ENDPOINTS } from '@/constants/api/apiEndPoints';
 
-const LoginScreen = () => {
+const LoginScreen = (): JSX.Element => {
+
+  const { login } = useAuth();
 
   const [userName, setUserName] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const setUserNameHandler = (value: string): void => setUserName(value);
   const setPasswordHandler = (value: string): void => setPassword(value)
@@ -17,9 +23,8 @@ const LoginScreen = () => {
     setShowPassword(prevValue => !prevValue);
   }
 
-  const loginHandler = (): void => {
+  const loginHandler = async (): Promise<void> => {
     // Login
-    router.replace('/home');
   }
 
   return (

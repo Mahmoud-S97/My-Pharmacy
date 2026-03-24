@@ -1,9 +1,15 @@
 import React from 'react';
-import { Tabs } from 'expo-router';
-import { Text, View } from 'react-native';
+import { Redirect, Tabs } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useAuth } from '@/hooks/Auth/useAuth';
+import Spinner from '@/components/ui/globals/Spinner';
 
 export default function TabLayout() {
+
+  const { isLoggedIn } = useAuth();
+
+  // App-Redirecting second guard
+  if (!isLoggedIn) return <Redirect href='/(auth)/intro' />
 
   return (
     <Tabs

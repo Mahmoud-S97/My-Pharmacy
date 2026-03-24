@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import { LOCAL_STORAGE_KEYS } from '@/constants/localStorageKeys';
 import { UseSecureStorage } from '@/hooks/Auth/useSecureStorage';
 
