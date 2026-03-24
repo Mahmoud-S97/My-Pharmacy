@@ -1,6 +1,6 @@
 import React, { ComponentProps } from 'react';
 import { TextInput, TouchableOpacity, View } from 'react-native';
-import { cn } from '@/src/lib/nativeWindCss/cs';
+import { cn } from '@/lib/nativeWindCss/cn';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
