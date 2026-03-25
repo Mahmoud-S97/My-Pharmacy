@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import MainHeader from '@/components/layout/navigation/header/MainHeader';
 import { useProfile } from '@/hooks/App/useProfile';
 import Spinner from '@/components/ui/globals/Spinner';
+import ScreenView from '@/components/layout/screens/ScreenView';
 
 
 const HomeScreen = () => {
@@ -16,7 +17,7 @@ const HomeScreen = () => {
   if (isLoading) return <Spinner />
 
   return (
-    <View className='flex-1 bg-white'>
+    <ScreenView>
       <MainHeader logoText='My Pharmacy' screenName='Home' />
       <View className='flex-1 py-40 justify-center items-center'>
         {error ? (
@@ -25,7 +26,7 @@ const HomeScreen = () => {
           <Text className='text-3xl text-center font-bold'>Welcome <Text className='text-purple-500'>{`${userData?.firstName} ${userData?.lastName}`}</Text></Text>
         )}
       </View>
-    </View>
+    </ScreenView>
   )
 }
 

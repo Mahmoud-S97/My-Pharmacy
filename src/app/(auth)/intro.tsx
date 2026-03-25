@@ -3,6 +3,8 @@ import { router } from 'expo-router';
 import MainButton from '@/components/ui/globals/buttons/MainButton';
 import { LOCAL_STORAGE_KEYS } from '@/constants/localStorageKeys';
 import { useApp } from '@/hooks/App/useApp';
+import ScreenView from '@/components/layout/screens/ScreenView';
+import ContainerView from '@/components/layout/screens/ContainerView';
 
 const IntroScreen = () => {
 
@@ -18,15 +20,15 @@ const IntroScreen = () => {
   }
 
   return (
-    <View className='flex-1 bg-white'>
-      <View className='flex-1 px-6 py-2 bg-white justify-center items-center'>
+    <ScreenView>
+      <ContainerView>
         <Text className='text-5xl font-bold mb-20 text-center'>Welcome Back!</Text>
         <View className='w-full h-[30%] flex flex-column gap-8 justify-center items-center'>
           <MainButton title='Login' onPress={() => navigationHandler('login')} />
           <MainButton title='Sign Up' onPress={() => navigationHandler('sign-up')} className='bg-white border' textClassName='text-gray-900' />
         </View>
-      </View>
-    </View>
+      </ContainerView>
+    </ScreenView>
   )
 }
 

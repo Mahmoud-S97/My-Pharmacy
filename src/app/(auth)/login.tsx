@@ -8,6 +8,8 @@ import { ENV } from '../../../config/env';
 import { API_ENDPOINTS } from '@/constants/api/apiEndPoints';
 import { useLogin } from '@/hooks/Auth/useLogin';
 import Spinner from '@/components/ui/globals/Spinner';
+import ScrollingView from '@/components/layout/screens/ScrollingView';
+import ContainerView from '@/components/layout/screens/ContainerView';
 
 const LoginScreen = () => {
 
@@ -43,23 +45,21 @@ const LoginScreen = () => {
 
   return (
     <KeyboardAvoidingView className='flex-1' behavior='padding'>
-      <ScrollView className='flex-1' contentContainerClassName='grow'>
-        <View className='flex-1 bg-white'>
-          <View className='flex-1 px-6 py-2 bg-white justify-center items-center'>
-            <Text className='text-5xl font-bold mb-20 text-center'>Login!</Text>
-            <View className='w-full h-auto flex flex-column gap-8 justify-center items-center'>
-              {error && <Text className='w-[90%] text-center text-red-500 text-lg font-medium'>{error.toString()}</Text>}
-              <MainInputField placeholder='Username' icon='account-circle' value={userName} onChangeText={setUserNameHandler} />
-              <MainInputField placeholder='Password' icon='lock' secureTextEntry={!showPassword} isPasswordField={true} value={password} onChangeText={setPasswordHandler} toggleShowPassword={toggleShowPassword} />
-              <MainButton title='Login' onPress={loginHandler} loading={isLoading} />
-              <TouchableOpacity activeOpacity={0.7} className='flex-row items-center justify-center' onPress={() => router.navigate('/sign-up')}>
-                <Text className='text-lg me-2 text-gray-500'>Don't have an account?</Text>
-                <Text className='text-xl text-gray-800 font-[600]'>Sign Up</Text>
-              </TouchableOpacity>
-            </View>
+      <ScrollingView>
+        <ContainerView>
+          <Text className='text-5xl font-bold mb-20 text-center'>Login!</Text>
+          <View className='w-full h-auto flex flex-column gap-8 justify-center items-center'>
+            {error && <Text className='w-[90%] text-center text-red-500 text-lg font-medium'>{error.toString()}</Text>}
+            <MainInputField placeholder='Username' icon='account-circle' value={userName} onChangeText={setUserNameHandler} />
+            <MainInputField placeholder='Password' icon='lock' secureTextEntry={!showPassword} isPasswordField={true} value={password} onChangeText={setPasswordHandler} toggleShowPassword={toggleShowPassword} />
+            <MainButton title='Login' onPress={loginHandler} loading={isLoading} />
+            <TouchableOpacity activeOpacity={0.7} className='flex-row items-center justify-center' onPress={() => router.navigate('/sign-up')}>
+              <Text className='text-lg me-2 text-gray-500'>Don't have an account?</Text>
+              <Text className='text-xl text-gray-800 font-[600]'>Sign Up</Text>
+            </TouchableOpacity>
           </View>
-        </View>
-      </ScrollView>
+        </ContainerView>
+      </ScrollingView>
     </KeyboardAvoidingView>
   )
 }
